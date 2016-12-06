@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_home"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.kindnes.roxanajula.kindnes.HomeActivity">
+
+    <Button
+        android:text="Volunteer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/volunteerButton"
+        android:elevation="0dp" />
+
+    <Button
+        android:text="Donate Money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/moneyButton" />
+
+    <Button
+        android:text="Give out clothes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/clothesButton" />
+
+    <Button
+        android:text="Help with food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/foodButton" />
+</LinearLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "664271680273",
+    "firebase_url": "https://kindnes-d1459.firebaseio.com",
+    "project_id": "kindnes-d1459",
+    "storage_bucket": "kindnes-d1459.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664271680273:android:75af4c57fb92c845",
+        "android_client_info": {
+          "package_name": "com.kindnes.roxanajula.kindnes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664271680273-45quro6mh4hho3qfuqvl4earg08vop6d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kindnes.roxanajula.kindnes",
+            "certificate_hash": "573047641C5A7DA559972F5624DB3E707D6A2500"
+          }
+        },
+        {
+          "client_id": "664271680273-rg2errni2rfkos649gcj6v4f723h3nq8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAM3grbgymy5R7w1UIghI1Sv2jQWsKR-No"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664271680273-rg2errni2rfkos649gcj6v4f723h3nq8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
