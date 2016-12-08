@@ -52,7 +52,10 @@
             android:label="@string/title_activity_food" />
         <activity
             android:name=".ClothesActivity"
-            android:label="@string/title_activity_clothes"></activity>
+            android:label="@string/title_activity_clothes" />
+        <activity android:name=".AboutUsActivity" />
+        <activity android:name=".HowItWorksActivity" />
+        <activity android:name=".TermsActivity"></activity>
     </application>
 
 </manifest>
