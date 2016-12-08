@@ -72,15 +72,17 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
         if (id == R.id.nav_home) {
             // Handle the home action
         } else if (id == R.id.nav_about) {
-
+            Intent intent = new Intent(HomeActivity.this, AboutUsActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_how_it_works) {
-
+            Intent intent = new Intent(HomeActivity.this, HowItWorksActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_terms) {
-
+            Intent intent = new Intent(HomeActivity.this, TermsActivity.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
