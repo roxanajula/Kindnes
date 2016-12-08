@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FoodActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class ClothesActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     public List<Location> foodLocations = new ArrayList<>();
@@ -26,7 +26,7 @@ public class FoodActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Help with food");
+        setTitle("Give out clothes");
         setContentView(R.layout.activity_food);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -38,7 +38,7 @@ public class FoodActivity extends AppCompatActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         //Get data from Firebase database
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference().child("foodLocations");
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference().child("clothesLocations");
         rootRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
