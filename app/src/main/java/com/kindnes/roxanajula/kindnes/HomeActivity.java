@@ -2,18 +2,24 @@ package com.kindnes.roxanajula.kindnes;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.firebase.ui.auth.AuthUI;
 import com.squareup.picasso.Picasso;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -82,9 +88,24 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    public void goToFoodView(View view)
-    {
+    public void goToFoodView(View view) {
         Intent intent = new Intent(HomeActivity.this, FoodActivity.class);
         startActivity(intent);
+    }
+
+    public void logOutUser(View view) {
+        if (view.getId() == R.id.logOutButton) {
+            AuthUI.getInstance()
+                    .signOut(this)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Log.d("AUTH", "USER LOGGED OUT");
+                            Intent loginPage = new Intent(HomeActivity.this, LoginActivity.class);
+                            startActivity(loginPage);
+                        }
+                    });
+
+        }
     }
 }
