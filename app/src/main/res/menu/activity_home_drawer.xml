@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="HOME" />
+        <item
+            android:id="@+id/nav_about"
+            android:title="ABOUT US" />
+        <item
+            android:id="@+id/nav_how_it_works"
+            android:title="HOW IT WORKS" />
+        <item
+            android:id="@+id/nav_terms"
+            android:title="TERMS AND CONDITIONS" />
+    </group>
+
+</menu>

@@ -14,4 +14,8 @@
         completions."
     </string>
     <string name="facebook_application_id">1813803378905444</string>
+    <string name="title_activity_home">Kindnes</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_food">Map</string>
 </resources>
