@@ -100,6 +100,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent);
     }
 
+    public void goToProfileView(View view) {
+        Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
     public void logOutUser(View view) {
         if (view.getId() == R.id.logOutButton) {
             AuthUI.getInstance()
