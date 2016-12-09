@@ -1,6 +1,9 @@
 package com.kindnes.roxanajula.kindnes;
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -10,9 +13,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,12 +30,18 @@ import com.squareup.picasso.Picasso;
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        Typeface aquawax_medium_font = Typeface.createFromAsset(getAssets(),  "fonts/aquawax_medium.ttf");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        TextView toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+        toolbarTitle.setText("Kindnes");
+        toolbarTitle.setTypeface(aquawax_medium_font);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -42,9 +53,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         TextView userNameMenu = (TextView) navigationView.getHeaderView(0).findViewById(R.id.userNameMenu);
-        userNameMenu.setText(user.getDisplayName());
+        userNameMenu.setText(user.getDisplayName().toUpperCase());
+
         ImageView userPhotoMenu = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.userPhotoMenu);
         Picasso.with(this).load(user.getPhotoUrl()).into(userPhotoMenu);
+
     }
 
     @Override

@@ -7,35 +7,44 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.kindnes.roxanajula.kindnes.HomeActivity"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:weightSum="1">
 
-    <Button
-        android:text="Volunteer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+    <ImageButton
         android:id="@+id/volunteerButton"
-        android:minHeight="130dp" />
-
-    <Button
-        android:text="Donate Money"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/volunteer"
+        android:scaleType="centerCrop" />
+
+    <ImageButton
         android:id="@+id/moneyButton"
-        android:minHeight="130dp" />
-
-    <Button
-        android:text="Give out clothes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:src="@drawable/donate_money"
+        android:background="@null"
+        android:scaleType="centerCrop" />
+
+    <ImageButton
         android:id="@+id/clothesButton"
-        android:onClick="goToClothesView"
-        android:minHeight="130dp" />
-
-    <Button
-        android:text="Help with food"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="goToClothesView"
+        android:src="@drawable/give_out_clothes"
+        android:background="@null"
+        android:scaleType="centerCrop" />
+
+
+    <ImageButton
         android:id="@+id/foodButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="goToFoodView"
-        android:minHeight="130dp" />
+        android:src="@drawable/help_with_food"
+        android:background="@null"
+        android:scaleType="centerCrop"
+        android:layout_weight="0.25" />
+
 </LinearLayout>
