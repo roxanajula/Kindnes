@@ -1,6 +1,7 @@
 package com.kindnes.roxanajula.kindnes;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -29,8 +30,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        Typeface aquawax_medium_font = Typeface.createFromAsset(getAssets(),  "fonts/aquawax_medium.ttf");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        TextView toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
+        toolbarTitle.setText("Kindnes");
+        toolbarTitle.setTypeface(aquawax_medium_font);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -42,9 +48,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
         TextView userNameMenu = (TextView) navigationView.getHeaderView(0).findViewById(R.id.userNameMenu);
-        userNameMenu.setText(user.getDisplayName());
+        userNameMenu.setText(user.getDisplayName().toUpperCase());
+
         ImageView userPhotoMenu = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.userPhotoMenu);
         Picasso.with(this).load(user.getPhotoUrl()).into(userPhotoMenu);
+
     }
 
     @Override
@@ -73,7 +81,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.nav_home) {
-            // Handle the home action
+            Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_about) {
             Intent intent = new Intent(HomeActivity.this, AboutUsActivity.class);
             startActivity(intent);

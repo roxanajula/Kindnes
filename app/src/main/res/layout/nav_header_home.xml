@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@drawable/side_nav_bar"
+    android:background="@drawable/menu_cover"
     android:gravity="bottom"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -12,38 +12,76 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:layout_height="260dp">
 
-    <ImageView
-        android:id="@+id/userPhotoMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@android:drawable/sym_def_app_icon" />
-
-    <TextView
-        android:id="@+id/userNameMenu"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/userTitleMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Philantropy Master" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
 
-    <Button
-        android:text="See profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/profileButton"
-        android:onClick="goToProfileView" />
+            <Button
+                android:text="See profile"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:id="@+id/profileButton"
+                android:onClick="goToProfileView"
+                android:layout_weight="1"
+                android:background="@color/kindness_colorAccent"
+                android:height="36dp"
+                android:layout_marginRight="10dp"
+                android:elevation="2dp" />
 
-    <Button
-        android:text="Log out"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/logOutButton"
-        android:onClick="logOutUser" />
+            <Button
+                android:text="Log out"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:id="@+id/logOutButton"
+                android:onClick="logOutUser"
+                android:layout_weight="1"
+                android:background="@color/kindness_colorAccent"
+                android:height="36dp"
+                android:layout_marginLeft="10dp"
+                android:elevation="2dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/userTitleMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Philantrophy Master"
+            android:layout_below="@+id/userNameMenu"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:id="@+id/userNameMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:text="User name"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:paddingTop="5dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userPhotoMenu"
+            app:srcCompat="@android:drawable/sym_def_app_icon"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FFF"
+            android:paddingTop="20dp"
+            android:layout_height="140dp"
+            android:layout_width="140dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+
+    </RelativeLayout>
 
 </LinearLayout>
