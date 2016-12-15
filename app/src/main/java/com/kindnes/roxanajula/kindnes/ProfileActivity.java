@@ -17,9 +17,10 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        setTitle("Profile");
 
         TextView userNameProfile = (TextView) findViewById(R.id.userNameProfile);
-        userNameProfile.setText(user.getDisplayName());
+        userNameProfile.setText(user.getDisplayName().toUpperCase());
         ImageView userPhotoProfile = (ImageView) findViewById(R.id.userPhotoProfile);
         Picasso.with(this).load(user.getPhotoUrl()).into(userPhotoProfile);
     }

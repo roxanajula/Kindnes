@@ -21,7 +21,6 @@ import java.util.List;
 public class ClothesActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    public List<Location> foodLocations = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,7 @@ public class ClothesActivity extends AppCompatActivity implements OnMapReadyCall
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         //Get data from Firebase database
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference().child("clothesLocations");
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference().child("locations").child("clothesLocations");
         rootRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
@@ -46,7 +45,6 @@ public class ClothesActivity extends AppCompatActivity implements OnMapReadyCall
                     Location loc = snapshot.child(""+i).getValue(Location.class);
                     LatLng pin = new LatLng(loc.getLat(), loc.getLng());
                     mMap.addMarker(new MarkerOptions().position(pin).title(loc.getTitle()));
-                    foodLocations.add(loc);
                 }
             }
             @Override

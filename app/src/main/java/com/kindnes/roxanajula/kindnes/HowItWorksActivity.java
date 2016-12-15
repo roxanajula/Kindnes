@@ -9,5 +9,6 @@ public class HowItWorksActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_how_it_works);
+        setTitle("How it works");
     }
 }
