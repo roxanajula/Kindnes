@@ -15,6 +15,7 @@
         android:id="@+id/volunteerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="goToVolunteerView"
         android:background="@null"
         android:src="@drawable/volunteer"
         android:scaleType="centerCrop" />

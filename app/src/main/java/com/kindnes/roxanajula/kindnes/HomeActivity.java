@@ -109,6 +109,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         startActivity(intent);
     }
 
+    public void goToVolunteerView(View view) {
+        Intent intent = new Intent(HomeActivity.this, VolunteeringOrganisationListActivity.class);
+        startActivity(intent);
+    }
+
     public void goToProfileView(View view) {
         Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
         startActivity(intent);

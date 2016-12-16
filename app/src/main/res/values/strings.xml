@@ -19,4 +19,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_food">Map</string>
     <string name="title_activity_clothes">Map</string>
+    <string name="title_volunteeringorganisation_list">VolunteeringOrganisations</string>
+    <string name="title_volunteeringorganisation_detail">VolunteeringOrganisation Detail</string>
 </resources>
